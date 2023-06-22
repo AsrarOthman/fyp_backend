@@ -2,10 +2,11 @@ import pkg from "pg";
 const { Pool } = pkg;
 
 const db = new Pool({
-  host:process.env.DB_HOST || "localhost",
-  user:process.env.DB_USER ||"postgres",
-  password: process.env.DB_DATABASE ||"474747",
-  database:process.env.DB_PASSWORD || "ao-blog",
+  host: process.env.DB_HOST || "localhost",
+  user: process.env.DB_USER || "postgres",
+  password: process.env.DB_DATABASE || "474747",
+  database: process.env.DB_PASSWORD || "ao-blog",
+  ssl: process.env.DB_SSL || false,
   max: 20,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
