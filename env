@@ -1,0 +1,6 @@
+
+
+DB_HOST= "localhost",
+DB_USER="postgres",
+DB_DATABASE= "474747",
+DB_PASSWORD=  "ao-blog"
