@@ -5,7 +5,7 @@ const validatorResponse = (req, res, next) => {
   const validationError = validationResult(req).array();
   if (validationError.length > 0) {
     const serverRes = {
-      message: "Invalid request - validation salah",
+      message: "Invalid request",
       error: validationError,
     };
     res.status(403).json(serverRes);

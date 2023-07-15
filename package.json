@@ -20,7 +20,7 @@
     "jsonwebtoken": "^9.0.0",
     "node": "^20.2.0",
     "nodemon": "^2.0.22",
-    "pg": "^8.11.0"
+    "pg": "^8.11.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.5",
