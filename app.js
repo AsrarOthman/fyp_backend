@@ -11,6 +11,10 @@ import rules from "./middleware/rules.js";
 import checkStatus from "./controller/health/checkStatus.js";
 import dataRules from "./controller/user/dataRules.js";
 import downloadUserInformation from "./controller/user/downloadUserInformation.js";
+import pdfFile from "./controller/user/pdfFIle.js";
+import getPdf from "./controller/user/getPdf.js";
+import getAlldataPdf from "./controller/user/getAlldataPdf.js";
+import dwnPdf from "./controller/user/dwnPdf.js";
 const app = express();
 app.use(express.json());
 
@@ -45,6 +49,7 @@ app.post(
   validatorResponse,
   register
 );
+
 app.post(
   "/api/login",
   check("identifier").notEmpty().bail(),
@@ -54,10 +59,14 @@ app.post(
 );
 
 // private routes
+app.post("/api/pdffile", pdfFile);
+app.get("/api/getpdf", getPdf);
+app.get("/api/getpdfall", getAlldataPdf);
 app.get("/private", isAuthenticated, dataRules);
 app.get("/rules", isAuthenticated, rules, (req, res) =>
   res.status(200).json({ message: "rules route", user: req.user })
 );
+app.get('/api/pdffile/:id',dwnPdf);
 app.get("/api/users", isAuthenticated, listAll);
 app.get("/api/users/:username", isAuthenticated, view);
 app.get("/api/users/download/:id", isAuthenticated, downloadUserInformation);

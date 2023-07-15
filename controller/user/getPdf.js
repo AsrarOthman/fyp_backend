@@ -1,9 +1,9 @@
 import query from "../../db/index.js";
 
-const dataRules = async (req, res) => {
-  console.log("userdata", req.user.username);
+const getPdf = async (req, res) => {
+  console.log("filename", req.user.username);
   const username = req.user.username;
-  const dbRes = await query("SELECT * FROM users WHERE username=$1", [
+  const dbRes = await query("SELECT * FROM pdf_files WHERE filename=$1", [
     username,
   ]);
   const serverRes = {
@@ -13,4 +13,4 @@ const dataRules = async (req, res) => {
   res.status(200).json(serverRes);
 };
 
-export default dataRules;
+export default getPdf;

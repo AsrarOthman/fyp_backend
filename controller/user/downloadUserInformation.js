@@ -18,7 +18,6 @@
 
 // export default downloadUserInfo;
 
-
 import query from "../../db/index.js";
 import axios from "axios";
 

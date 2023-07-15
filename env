@@ -1,5 +1,5 @@
 DB_HOST = localhost;
 DB_USER = postgres;
-DB_DATABASE = 474747;
-DB_PASSWORD = ao - blog;
+DB_DATABASE = ao - blog;
+DB_PASSWORD = 474747;
 DB_SSL = true;
